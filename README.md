@@ -7,7 +7,7 @@ Mongo Go Models(mgm) relation is the package to implement relations for the
 
 **Important Notes**: 
 - This package use Mongo Go Models native methods, so you can not expect to have behavior of `mgn` (like set `ID` on the model, or update `created_at`,`updated_at` fields...).  
-You can write your sync hooks or use default `mgm-relation` implementation of sync hooks to handle it.
+  You can write your sync hooks or use default `mgm-relation` implementation of sync hooks to handle it.
 
 **TODO**
-- [ ] We can set the foreign key field value by the reflection package, implement if you need it(find foreign key field on the related model by `bson` tag value).  
+- [ ] We can set the foreign key field, implement if you need it(find foreign key field on the related model by `bson` tag's value).  
