@@ -10,4 +10,5 @@ Mongo Go Models(mgm) relation is the package to implement relations for the
   You can write your sync hooks or use default `mgm-relation` implementation of sync hooks to handle it.
 
 **TODO**
-- [ ] We can set the foreign key field, implement if you need it(find foreign key field on the related model by `bson` tag's value).  
+- [ ] We can set the foreign key field, implement if you need it(find foreign key field on the related model by `bson` tag's value).
+- [ ] Add `Insert`,`Update` methods to the HasMany model to add/update single model in HasMany relation.
