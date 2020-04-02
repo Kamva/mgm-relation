@@ -17,16 +17,62 @@ type HasManyRelation struct {
 	foreignKey string
 }
 
-// Get method get the list of related models
+// Get method get the list of related models with provided filter,limit,...
 // if not found, returns the Mongo Go driver not found error.
-func (r *HasManyRelation) All(results interface{}) error {
-	return mgm.Coll(r.related).SimpleFind(results, r.filterByRelation(nil))
+func (r *HasManyRelation) GetWithOptions(results interface{}, options ...*options.FindOptions) error {
+	return mgm.Coll(r.related).SimpleFind(results, r.filterByRelation(nil), options...)
+}
+
+// Get method get the list of related models with provided filter,limit,...
+// if not found, returns the Mongo Go driver not found error.
+func (r *HasManyRelation) Get(results interface{}, sort string, skip, limit int64) error {
+	return r.GetWithOptions(results, &options.FindOptions{
+		Limit: &limit,
+		Skip:  &skip,
+		Sort:  r.sortFieldToBsonD(sort),
+	})
+}
+
+// SimpleGet method get the list of related models
+// if not found, returns the Mongo Go driver not found error.
+// sort is the sort field. you can sort descending by adding a `-` to the sort field. e.g `-created_at`
+func (r *HasManyRelation) SimpleGet(results interface{}, limit int64) error {
+	return r.Get(results, "-_id", 0, limit)
+}
+
+// SyncWithoutRemove method sync the relations without
+// removing items that are not in the provided list.
+func (r *HasManyRelation) SyncWithoutRemove(docs interface{}) error {
+	if gutil.IsNil(docs) {
+		return nil
+	}
+	models := r.toModel(gutil.InterfaceSlice(docs))
+	if len(models) == 0 {
+		return nil
+	}
+	upsert := true
+	for _, m := range models {
+		if err := callToBeforeSyncHooks(m); err != nil {
+			return err
+		}
+		_, err := mgm.Coll(r.related).UpdateOne(mgm.Ctx(), bson.M{f.ID: m.GetID()}, bson.M{o.Set: m}, &options.UpdateOptions{
+			Upsert: &upsert,
+		})
+		if err != nil {
+			return err
+		}
+		if err := callToAfterSyncHooks(m); err != nil {
+			return err
+		}
+	}
+	return nil
 }
 
 // Sync method sync the relations:
 // If provided models is nil(or length is zero): it remove the related models in the DB.
 // If provided models is not nil and length is not zero: udpate new items, and remove
-//  items that are not in the provided list.
+// items that are not in the provided list.
+// Use sync just when your 1-m model contains just few m mdoel. otherwise use SyncWithoutRemove
 func (r *HasManyRelation) Sync(docs interface{}) error {
 	if gutil.IsNil(docs) {
 		_, err := r.delete(nil)
@@ -85,6 +131,20 @@ func (r *HasManyRelation) extractIDs(models []mgm.Model) []interface{} {
 		ids[i] = m.GetID()
 	}
 	return ids
+}
+
+// sortFieldToBsonD converts the string sort field to bson D.
+func (r *HasManyRelation) sortFieldToBsonD(field string) bson.D {
+	// Ascending order
+	order := 1
+	if field[0] == '-' {
+		order = -1
+		field = field[1:]
+	}
+
+	return bson.D{
+		{field, order},
+	}
 }
 
 // HasMany returns new instance of the "has many" relation ship.

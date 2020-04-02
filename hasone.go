@@ -17,7 +17,7 @@ type HasOneRelation struct {
 	foreignKey string
 }
 
-// Get method get the single related model.
+// SimpleGet method get the single related model.
 // if not found, returns the Mongo Go driver not found error.
 func (r *HasOneRelation) Get(m mgm.Model) error {
 	return mgm.Coll(r.related).First(r.filterByRelation(nil), m)
