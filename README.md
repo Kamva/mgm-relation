@@ -1,4 +1,4 @@
-Mongo Go Models(mgm) relation is the package to implement relations for the 
+Mongo Go Models(mgm) relation implements has-one,has-many relations for the 
 [Mongo Go Models (mgm)](https://github.com/Kamva/mgm) package.
 
 **Hooks**
@@ -10,4 +10,4 @@ Mongo Go Models(mgm) relation is the package to implement relations for the
   You can write your sync hooks or use default `mgm-relation` implementation of sync hooks to handle it.
 
 **TODO**
-- [ ] We can set the foreign key field, implement if you need it(find foreign key field on the related model by `bson` tag's value).
+- [ ] We can also automatically set the foreign key field on each model before saving it. implement it if you need(find foreign key field on the related model by `bson` tag's value).
