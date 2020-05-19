@@ -4,6 +4,8 @@ github.com/Kamva/gutil v0.0.0-20200323212834-37ef54792117 h1:QX4fJaNqGJGFcE67yMv
 github.com/Kamva/gutil v0.0.0-20200323212834-37ef54792117/go.mod h1:KvaAPqUTtjac/70L9pCuNEJX0FSH7+WrTo6sariE4FM=
 github.com/Kamva/gutil v0.0.0-20200324095634-85a18fb4a696 h1:2PWo5uCMKsb1K5TebIxmrFfrBGQoQvwA51RC6U7UIWE=
 github.com/Kamva/gutil v0.0.0-20200324095634-85a18fb4a696/go.mod h1:KvaAPqUTtjac/70L9pCuNEJX0FSH7+WrTo6sariE4FM=
+github.com/Kamva/gutil v0.0.0-20200519073657-61fe06c54bfb h1:MGwiMQl+jKQO3ky8Y6Mu6oUDeyXkUWKoWgM8g7Qf8jw=
+github.com/Kamva/gutil v0.0.0-20200519073657-61fe06c54bfb/go.mod h1:KvaAPqUTtjac/70L9pCuNEJX0FSH7+WrTo6sariE4FM=
 github.com/Kamva/mgm/v3 v3.0.0-alpha.1 h1:IKNr4RU9RF+SFUWooyeYrMS5rskTBAZkNXr18aU96Qg=
 github.com/Kamva/mgm/v3 v3.0.0-alpha.1/go.mod h1:73dKZ4Qvfdxve41TwmJNnVaGPZ7MUDcphjVABUalB/s=
 github.com/Kamva/mgm/v3 v3.0.0-alpha.2 h1:kmOc8b9AhZ76vaohBiIks4GkRMrF6V5dP5X8WWM72jk=

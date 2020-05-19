@@ -46,7 +46,7 @@ func (r *HasManyRelation) SyncWithoutRemove(docs interface{}) error {
 	if gutil.IsNil(docs) {
 		return nil
 	}
-	models := r.toModel(gutil.InterfaceSlice(docs))
+	models := r.toModel(gutil.InterfaceToSlice(docs))
 	if len(models) == 0 {
 		return nil
 	}
@@ -78,7 +78,7 @@ func (r *HasManyRelation) Sync(docs interface{}) error {
 		_, err := r.delete(nil)
 		return err
 	}
-	models := r.toModel(gutil.InterfaceSlice(docs))
+	models := r.toModel(gutil.InterfaceToSlice(docs))
 	if len(models) == 0 {
 		_, err := r.delete(nil)
 		return err
