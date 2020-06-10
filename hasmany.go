@@ -50,13 +50,12 @@ func (r *HasManyRelation) SyncWithoutRemove(docs interface{}) error {
 	if len(models) == 0 {
 		return nil
 	}
-	upsert := true
 	for _, m := range models {
 		if err := callToBeforeSyncHooks(m); err != nil {
 			return err
 		}
 		_, err := mgm.Coll(r.related).UpdateOne(mgm.Ctx(), bson.M{f.ID: m.GetID()}, bson.M{o.Set: m}, &options.UpdateOptions{
-			Upsert: &upsert,
+			Upsert: gutil.BoolPtr(true),
 		})
 		if err != nil {
 			return err
@@ -83,13 +82,12 @@ func (r *HasManyRelation) Sync(docs interface{}) error {
 		_, err := r.delete(nil)
 		return err
 	}
-	upsert := true
 	for _, m := range models {
 		if err := callToBeforeSyncHooks(m); err != nil {
 			return err
 		}
 		_, err := mgm.Coll(r.related).UpdateOne(mgm.Ctx(), bson.M{f.ID: m.GetID()}, bson.M{o.Set: m}, &options.UpdateOptions{
-			Upsert: &upsert,
+			Upsert: gutil.BoolPtr(true),
 		})
 		if err != nil {
 			return err
@@ -149,11 +147,11 @@ func (r *HasManyRelation) sortFieldToBsonD(field string) bson.D {
 
 // HasMany returns new instance of the "has many" relation ship.
 func HasMany(model mgm.Model, related mgm.Model) *HasManyRelation {
-	return HasManyByOptions(model, related, foreignKeyName(model))
+	return HasManyWithOptions(model, related, foreignKeyName(model))
 }
 
-// HasManyByOptions gets HasManyRelation options and returns new instance of it.
-func HasManyByOptions(model mgm.Model, related mgm.Model, foreignKey string) *HasManyRelation {
+// HasManyWithOptions gets HasManyRelation options and returns new instance of it.
+func HasManyWithOptions(model mgm.Model, related mgm.Model, foreignKey string) *HasManyRelation {
 	return &HasManyRelation{
 		m:          model,
 		related:    related,
