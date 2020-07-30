@@ -55,7 +55,7 @@ func (r *HasManyRelation) SyncWithoutRemove(docs interface{}) error {
 			return err
 		}
 		_, err := mgm.Coll(r.related).UpdateOne(mgm.Ctx(), bson.M{f.ID: m.GetID()}, bson.M{o.Set: m}, &options.UpdateOptions{
-			Upsert: gutil.BoolPtr(true),
+			Upsert: gutil.NewBool(true),
 		})
 		if err != nil {
 			return err
@@ -87,7 +87,7 @@ func (r *HasManyRelation) Sync(docs interface{}) error {
 			return err
 		}
 		_, err := mgm.Coll(r.related).UpdateOne(mgm.Ctx(), bson.M{f.ID: m.GetID()}, bson.M{o.Set: m}, &options.UpdateOptions{
-			Upsert: gutil.BoolPtr(true),
+			Upsert: gutil.NewBool(true),
 		})
 		if err != nil {
 			return err
