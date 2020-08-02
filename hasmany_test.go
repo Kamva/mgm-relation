@@ -2,7 +2,7 @@ package mgmrel_test
 
 import (
 	"fmt"
-	mgmrel "github.com/Kamva/mgm-relation"
+	mgmrel "github.com/kamva/mgm-relation"
 	"github.com/Kamva/mgm/v3"
 	f "github.com/Kamva/mgm/v3/field"
 	"github.com/stretchr/testify/assert"

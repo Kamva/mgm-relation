@@ -1,8 +1,8 @@
 package mgmrel_test
 
 import (
-	"github.com/Kamva/gutil"
-	mgmrel "github.com/Kamva/mgm-relation"
+	"github.com/kamva/gutil"
+	mgmrel "github.com/kamva/mgm-relation"
 	"github.com/Kamva/mgm/v3"
 	"github.com/stretchr/testify/assert"
 	"go.mongodb.org/mongo-driver/bson"

@@ -2,7 +2,7 @@ package mgmrel
 
 import (
 	"fmt"
-	"github.com/Kamva/gutil"
+	"github.com/kamva/gutil"
 	"github.com/Kamva/mgm/v3"
 	"reflect"
 )

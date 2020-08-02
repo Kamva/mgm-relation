@@ -1,7 +1,7 @@
 package mgmrel
 
 import (
-	"github.com/Kamva/gutil"
+	"github.com/kamva/gutil"
 	"github.com/Kamva/mgm/v3"
 	f "github.com/Kamva/mgm/v3/field"
 	o "github.com/Kamva/mgm/v3/operator"
