@@ -1,5 +1,5 @@
 Mongo Go Models(mgm) relation implements has-one,has-many relations for the 
-[Mongo Go Models (mgm)](https://github.com/Kamva/mgm) package.
+[Mongo Go Models (mgm)](https://github.com/kamva/mgm) package.
 
 **Hooks**
 - `Syncing () error` : calls before sync. if return error, ew cancel sync and return that error to the caller.

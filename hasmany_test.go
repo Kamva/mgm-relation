@@ -3,8 +3,8 @@ package mgmrel_test
 import (
 	"fmt"
 	mgmrel "github.com/kamva/mgm-relation"
-	"github.com/Kamva/mgm/v3"
-	f "github.com/Kamva/mgm/v3/field"
+	"github.com/kamva/mgm/v3"
+	f "github.com/kamva/mgm/v3/field"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"go.mongodb.org/mongo-driver/bson"

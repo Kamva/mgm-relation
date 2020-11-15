@@ -1,6 +1,6 @@
 package mgmrel
 
-import "github.com/Kamva/mgm/v3"
+import "github.com/kamva/mgm/v3"
 
 // SyncingHook is the interface to implement hook to call before sync your model.
 type SyncingHook interface {

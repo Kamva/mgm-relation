@@ -2,9 +2,9 @@ package mgmrel
 
 import (
 	"github.com/kamva/gutil"
-	"github.com/Kamva/mgm/v3"
-	f "github.com/Kamva/mgm/v3/field"
-	o "github.com/Kamva/mgm/v3/operator"
+	"github.com/kamva/mgm/v3"
+	f "github.com/kamva/mgm/v3/field"
+	o "github.com/kamva/mgm/v3/operator"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
