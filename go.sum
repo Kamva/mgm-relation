@@ -48,7 +48,6 @@ github.com/jinzhu/inflection v1.0.0/go.mod h1:h+uFLlag+Qp1Va5pdKtLDYj+kHp5pxUVkr
 github.com/joho/godotenv v1.3.0/go.mod h1:7hK45KPybAkOC6peb+G5yklZfMxEjkZhHbwpqxOKXbg=
 github.com/kamva/gutil v0.0.0-20200802192905-f876666b3671 h1:spCCndvE6oZMhGM/QQwF1d+LcfQbUeNFDzll/qC4Oxo=
 github.com/kamva/gutil v0.0.0-20200802192905-f876666b3671/go.mod h1:isEo5NPYgY0mNFbOrCbbDVTe7Cd5VujoEt1cKbG2oGg=
-github.com/kamva/mgm v1.2.3 h1:tuLP2wjpo1Lli3MeOaGNGdPg4FaQz+EvgE7rcC51/c0=
 github.com/kamva/mgm/v3 v3.1.0 h1:WLMrXwPXXGeeqvd+xg5XnQ0o1QuPkb3e4gL2sZXCxw0=
 github.com/kamva/mgm/v3 v3.1.0/go.mod h1:WeTKvDky1Qps7+7UL9ls6OOAfCMLAsIbNFsvtnwctj8=
 github.com/karrick/godirwalk v1.8.0/go.mod h1:H5KPZjojv4lE+QYImBI8xVtrBRgYrIVsaRPx4tDPEn4=
@@ -91,8 +90,6 @@ github.com/xdg/scram v0.0.0-20180814205039-7eeb5667e42c/go.mod h1:lB8K/P019DLNhe
 github.com/xdg/stringprep v0.0.0-20180714160509-73f8eece6fdc/go.mod h1:Jhud4/sHMO4oL310DaZAKk9ZaJ08SJfe+sJh0HrGL1Y=
 github.com/xdg/stringprep v1.0.0 h1:d9X0esnoa3dFsV0FG35rAT0RIhYFlPq7MiP+DW89La0=
 github.com/xdg/stringprep v1.0.0/go.mod h1:Jhud4/sHMO4oL310DaZAKk9ZaJ08SJfe+sJh0HrGL1Y=
-go.mongodb.org/mongo-driver v1.1.3 h1:++7u8r9adKhGR+I79NfEtYrk2ktjenErXM99PSufIoI=
-go.mongodb.org/mongo-driver v1.1.3/go.mod h1:u7ryQJ+DOzQmeO7zB6MHyr8jkEQvC8vH7qLUO4lqsUM=
 go.mongodb.org/mongo-driver v1.3.4 h1:zs/dKNwX0gYUtzwrN9lLiR15hCO0nDwQj5xXx+vjCdE=
 go.mongodb.org/mongo-driver v1.3.4/go.mod h1:MSWZXKOynuguX+JSvwP8i+58jYCXxbia8HS3gZBapIE=
 golang.org/x/crypto v0.0.0-20180904163835-0709b304e793/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
